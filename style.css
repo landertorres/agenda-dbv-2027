@@ -1,0 +1,836 @@
+
+:root {
+    --verde: #004D40;
+    --verde-claro: #087F68;
+    --azul: #0D1B2A;
+    --dourado: #FFD700;
+    --fundo: #F3F6F5;
+    --branco: #FFFFFF;
+    --texto: #263238;
+    --cinza: #718096;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+.topo {
+    background: linear-gradient(120deg, var(--azul), var(--verde));
+    color: var(--branco);
+    padding: 24px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--dourado);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo-aamar {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: white;
+    padding: 3px;
+}
+
+.marca h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.marca p {
+    font-size: 10px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.ano {
+    color: var(--dourado);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 25px auto;
+}
+.boas-vindas {
+    background: var(--branco);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--dourado);
+    box-shadow: 0 3px 12px #0000000D;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.texto-boas-vindas {
+    flex: 1;
+}
+
+.contador-eventos {
+    min-width: 110px;
+    padding: 15px 22px;
+    background: var(--verde-petroleo);
+    color: rgb(0, 0, 0);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contador-eventos span {
+    font-size: 25px;
+}
+
+.contador-eventos strong {
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+
+
+.destaque {
+    color: var(--verde-claro);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.boas-vindas h2 {
+    color: var(--azul);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.boas-vindas p:last-child {
+    color: var(--cinza);
+    line-height: 1.5;
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+
+.card-resumo span {
+    font-size: 22px;
+}
+
+.card-resumo strong {
+    color: var(--verde);
+    font-size: 25px;
+}
+
+.card-resumo small {
+    color: var(--cinza);
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #D9E2DF;
+    border-radius: 9px;
+    background: var(--branco);
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: var(--verde-claro);
+}
+
+.calendario, .programacao {
+    background: var(--branco);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 12px #0000000D;
+}
+
+.titulo-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    gap: 10px;
+}
+
+.titulo-secao h2 {
+    color: var(--azul);
+    font-size: 19px;
+}
+
+.titulo-secao button {
+    background: var(--verde);
+    color: var(--branco);
+    border: none;
+    border-radius: 7px;
+    padding: 9px 13px;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+#calendario {
+    min-height: 150px;
+}
+
+.grade-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.dia-semana, .dia-calendario {
+    padding: 10px 2px;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.dia-semana {
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.dia-calendario {
+    background: var(--fundo);
+}
+
+.dia-calendario.tem-evento {
+    background: #D7EEE7;
+    color: var(--verde);
+    font-weight: bold;
+    border: 1px solid var(--verde-claro);
+    cursor: pointer;
+}
+
+.dia-calendario.selecionado {
+    background: var(--verde);
+    color: var(--branco);
+}
+
+.evento {
+    padding: 17px;
+    border: 1px solid #E4EBE8;
+    border-left: 4px solid var(--verde);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: var(--branco);
+}
+
+.evento h3 {
+    color: var(--azul);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.evento p {
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.acoes-evento {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.acoes-evento button {
+    border: none;
+    border-radius: 7px;
+    padding: 9px 12px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-favorito {
+    background: #FFF4C2;
+    color: #755C00;
+}
+
+.btn-concluir {
+    background: #D7EEE7;
+    color: var(--verde);
+}
+
+.status {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #E8F0ED;
+    color: var(--verde);
+}
+
+footer {
+    background: var(--azul);
+    color: var(--branco);
+    text-align: center;
+    padding: 22px 10px;
+    border-top: 3px solid var(--dourado);
+}
+
+footer p {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+footer small {
+    color: #C5D2D0;
+}
+@media (max-width: 650px) {
+    .topo {
+        padding: 18px 4%;
+    }
+
+    .marca h1 {
+        font-size: 17px;
+    }
+
+    .marca p {
+        font-size: 8px;
+    }
+
+    .logo-aamar {
+        width: 46px;
+        height: 46px;
+    }
+
+    .ano {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 15px auto;
+    }
+
+    .boas-vindas {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .boas-vindas h2 {
+        font-size: 18px;
+    }
+
+    .boas-vindas p {
+        font-size: 13px;
+    }
+
+    .contador-eventos {
+        min-width: 80px;
+        padding: 10px;
+    }
+
+    .contador-eventos span {
+        font-size: 20px;
+    }
+
+    .contador-eventos strong {
+        font-size: 25px;
+    }
+
+    .contador-eventos small {
+        font-size: 12px;
+    }
+
+    .resumo {
+        gap: 8px;
+    }
+
+    .card-resumo {
+        padding: 12px;
+    }
+
+    .card-resumo strong {
+        font-size: 21px;
+    }
+
+    .card-resumo small {
+        font-size: 11px;
+    }
+
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .calendario,
+    .programacao {
+        padding: 15px;
+    }
+
+    .dia-semana,
+    .dia-calendario {
+        padding: 9px 1px;
+        font-size: 11px;
+    }
+}
+
+.grupo-mes {
+    margin-bottom: 25px;
+}
+
+.titulo-mes {
+    background: #004D40;
+    color: #FFD700;
+    padding: 13px 16px;
+    border-radius: 8px;
+    font-size: 17px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Calendário anual compacto: quatro meses por linha */
+
+.calendario-anual {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.mes-miniatura {
+    background: #F3F6F5;
+    border: 1px solid #D9E2DF;
+    border-radius: 9px;
+    padding: 9px 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mes-miniatura h3 {
+    color: #004D40;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.mes-miniatura .grade-calendario {
+    gap: 2px;
+}
+
+.mes-miniatura .dia-semana,
+.mes-miniatura .dia-calendario {
+    padding: 4px 0;
+    font-size: 10px;
+}
+
+.mes-miniatura .dia-calendario.tem-evento {
+    background: #004D40;
+    color: #FFD700;
+}
+
+@media (max-width: 600px) {
+    .calendario-anual {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* CALENDÁRIO TRIMESTRAL */
+
+.navegacao-trimestre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.navegacao-trimestre h3 {
+    color: #004D40;
+    text-align: center;
+    font-size: 18px;
+}
+
+.navegacao-trimestre button {
+    background: #004D40;
+    color: #FFD700;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.calendario-trimestral {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    align-items: start;
+}
+
+.mes-trimestral {
+    background: #FFFFFF;
+    border: 1px solid #D9E2DF;
+    border-radius: 6px;
+    padding: 6px;
+    min-width: 0;
+}
+
+.mes-trimestral h3 {
+    background: #004D40;
+    color: #FFD700;
+    padding: 6px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.mes-trimestral .grade-calendario {
+    gap: 2px;
+    margin-top: 5px;
+}
+
+.mes-trimestral .dia-semana,
+.mes-trimestral .dia-calendario {
+    font-size: 10px;
+    padding: 5px 0;
+    min-width: 0;
+}
+
+.mes-trimestral .dia-calendario {
+    border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+    .calendario-trimestral {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 4px;
+    }
+
+    .mes-trimestral {
+        padding: 3px;
+    }
+
+    .mes-trimestral .dia-semana,
+    .mes-trimestral .dia-calendario {
+        font-size: 9px;
+        padding: 4px 0;
+    }
+}
+
+
+.mes-trimestral {
+    background: #FFFFFF;
+    border: 1px solid #D9E2DF;
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 0;
+}
+
+.mes-trimestral h3 {
+    background: #004D40;
+    color: #FFD700;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.grade-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 3px;
+    margin-top: 10px;
+}
+
+.dia-semana,
+.dia-calendario {
+    text-align: center;
+    padding: 7px 2px;
+    font-size: 12px;
+}
+
+.dia-semana {
+    font-weight: bold;
+    color: #004D40;
+}
+
+.dia-calendario {
+    border: 1px solid #E5EAE8;
+    background: #F3F6F5;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dia-calendario.tem-evento {
+    background: #004D40;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.dia-calendario.selecionado {
+    outline: 2px solid #D99B00;
+}
+
+@media (max-width: 800px) {
+    .calendario-trimestral {
+        grid-template-columns: 1fr;
+    }
+
+    .navegacao-trimestre {
+        flex-wrap: wrap;
+    }
+
+    .navegacao-trimestre h3 {
+        order: -1;
+        width: 100%;
+    }
+}
+
+/* AJUSTE FORÇADO DO CALENDÁRIO TRIMESTRAL */
+
+#calendario .calendario-trimestral {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+}
+
+#calendario .mes-trimestral {
+    min-width: 0 !important;
+    padding: 5px !important;
+    margin: 0 !important;
+}
+
+#calendario .mes-trimestral h3 {
+    font-size: 12px !important;
+    padding: 5px !important;
+}
+
+#calendario .mes-trimestral .grade-calendario {
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    gap: 2px !important;
+}
+
+#calendario .mes-trimestral .dia-semana,
+#calendario .mes-trimestral .dia-calendario {
+    font-size: 9px !important;
+    padding: 4px 0 !important;
+    min-width: 0 !important;
+    width: 100% !important;
+}
+
+/* APRESENTAÇÃO DOS EVENTOS AAMAR 2027 */
+
+.grupo-mes {
+    margin-bottom: 28px;
+}
+
+.titulo-mes {
+    background: #004D40;
+    color: #FFD700;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.evento {
+    background: #FFFFFF;
+    border: 1px solid #D9E2DF;
+    border-left: 5px solid #004D40;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.evento h3 {
+    color: #0D1B2A;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.evento p {
+    font-size: 13px;
+    color: #455A64;
+    margin: 6px 0;
+}
+
+.status {
+    display: inline-block;
+    background: #E8F5E9;
+    color: #1B5E20;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.acoes-evento {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.acoes-evento button {
+    padding: 8px 13px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-favorito {
+    background: #FFF8E1;
+    color: #8D6E00;
+}
+
+.btn-concluir {
+    background: #E0F2F1;
+    color: #004D40;
+}
+
+/* FORMULÁRIO DE CADASTRO DE EVENTOS */
+
+.area-cadastro {
+    margin: 20px 0;
+}
+
+#btnNovoEvento {
+    background: #004D40;
+    color: #FFD700;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#formEvento {
+    background: #FFFFFF;
+    border: 1px solid #D9E2DF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+#formEvento h3 {
+    color: #004D40;
+    margin-bottom: 15px;
+}
+
+#formEvento label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+    color: #0D1B2A;
+}
+
+#formEvento input,
+#formEvento select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #D9E2DF;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#formEvento button {
+    margin-top: 15px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#formEvento button[type="submit"] {
+    background: #004D40;
+    color: #FFD700;
+}
+
+#btnCancelarEvento {
+    background: #E5EAE8;
+    color: #263238;
+}
+/* ASSINATURA TRIAD */
+
+.assinatura-triad {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #D9E2DF;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.assinatura-triad img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+.texto-triad {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+
+.texto-triad p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.texto-triad p strong {
+    color: #FFD700;
+    letter-spacing: 1px;
+}
+
+.texto-triad small {
+    font-size: 11px;
+    opacity: 0.85;
+}
